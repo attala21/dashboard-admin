@@ -15,6 +15,8 @@ Pengguna dapat menambahkan data baru ke dalam tabel dengan mudah.
 Setiap baris data dapat diperbarui melalui fitur edit.
 -Hapus Data Mahasiswa
 Data mahasiswa dapat dihapus kapan saja melalui tombol delete.
+-Data Dummy
+Project ini sudah dilengkapi dengan data dummy (contoh data mahasiswa) agar pengguna dapat melihat tampilan tabel dan mencoba fitur CRUD tanpa harus mengisi data dari awal. Data dummy ini hanya berfungsi sebagai contoh dan dapat dihapus atau diganti sesuai kebutuhan.
 
 🎨 Desain Monokrom
 Tampilan dashboard dibuat dengan gaya monokrom (abu-abu gelap / hitam elegan) agar lebih nyaman digunakan dan tidak membuat visual cepat lelah. Desainnya bersih, rapi, dan cocok untuk aplikasi admin atau panel data sederhana.
