@@ -1,29 +1,11 @@
-Admin Dashboard Mahasiswa – Responsive Web App (HTML, CSS, JS)
+📘 Admin Dashboard Mahasiswa
+Project ini merupakan aplikasi dashboard sederhana yang dibangun menggunakan tiga file utama, yaitu index.html, style.css, dan script.js. Dashboard ini menampilkan data mahasiswa dalam bentuk tabel, dengan menu Dashboard dan Mahasiswa yang sama-sama mengarah pada halaman utama untuk melihat dan mengelola data.
 
-Project ini adalah aplikasi dashboard sederhana untuk mengelola data mahasiswa. Aplikasi dibuat menggunakan tiga file utama saja, yaitu:
--index.html
--style.css
--script.js
+🧩 Pada aplikasi ini, pengguna dapat menambahkan data mahasiswa baru, mengedit informasi yang sudah ada, maupun menghapus data secara langsung melalui tombol aksi yang tersedia. Untuk memudahkan percobaan, project ini juga dilengkapi data dummy sebagai contoh awal agar pengguna dapat langsung melihat struktur data dan mencoba fitur CRUD tanpa harus mengisi data terlebih dahulu. Data dummy tersebut bisa dihapus atau diganti sesuai kebutuhan.
 
-🗂️ Fitur Utama
+🎨 Tampilan dashboard menggunakan desain monokrom sederhana agar terlihat rapi dan modern, serta mudah untuk dipahami dalam konteks aplikasi administrasi.
 
--Menu Dashboard & Mahasiswa
-Kedua menu ini mengarah ke halaman yang sama dan menampilkan data mahasiswa dalam bentuk tabel.
--Tambah Mahasiswa
-Pengguna dapat menambahkan data baru ke dalam tabel dengan mudah.
--Edit Data Mahasiswa
-Setiap baris data dapat diperbarui melalui fitur edit.
--Hapus Data Mahasiswa
-Data mahasiswa dapat dihapus kapan saja melalui tombol delete.
--Data Dummy
-Project ini sudah dilengkapi dengan data dummy (contoh data mahasiswa) agar pengguna dapat melihat tampilan tabel dan mencoba fitur CRUD tanpa harus mengisi data dari awal. Data dummy ini hanya berfungsi sebagai contoh dan dapat dihapus atau diganti sesuai kebutuhan.
+🎓 Project ini dibuat untuk memenuhi tugas responsi sekaligus sebagai contoh implementasi CRUD dasar menggunakan HTML, CSS, dan JavaScript tanpa framework tambahan.
 
-🎨 Desain Monokrom
-Tampilan dashboard dibuat dengan gaya monokrom (abu-abu gelap / hitam elegan) agar lebih nyaman digunakan dan tidak membuat visual cepat lelah. Desainnya bersih, rapi, dan cocok untuk aplikasi admin atau panel data sederhana.
-
-🎓 Tujuan Project
-Project ini dibuat untuk memenuhi tugas responsi, sekaligus sebagai contoh implementasi CRUD dasar menggunakan HTML, CSS, dan JavaScript tanpa framework.
-
-🖥️ Demo Tampilan
-Jika ingin melihat tampilan dashboard seperti pada preview, kamu dapat membuka:
+🔗 Demo tampilan dapat dijalankan melalui link lokal berikut:
 http://127.0.0.1:5500/dasboard-admin/index.html
