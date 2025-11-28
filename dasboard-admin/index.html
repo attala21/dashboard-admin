@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin Mahasiswa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h4>Admin Panel</h4>
+        </div>
+        <nav class="nav flex-column sidebar-menu">
+            <button class="nav-link active menu-link" data-target="section-dashboard">
+                <i class="bi bi-speedometer2"></i>
+                <span>Dashboard</span>
+            </button>
+            <button class="nav-link menu-link" data-target="section-mahasiswa">
+                <i class="bi bi-people"></i>
+                <span>Mahasiswa</span>
+            </button>
+            <button class="nav-link" id="btnAdd">
+                <i class="bi bi-plus-circle"></i>
+                <span>Tambah Mahasiswa</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <header class="navbar navbar-expand sticky-top main-navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler me-2" type="button" id="toggleSidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <span class="navbar-brand mb-0 h1">Dashboard Admin</span>
+                <span class="navbar-text ms-auto">Selamat Datang, Admin</span>
+            </div>
+        </header>
+
+        <main class="container-fluid mt-4 px-3 px-md-4">
+            <!-- DASHBOARD -->
+            <section id="section-dashboard" class="mb-4">
+                <div class="row g-3">
+                    <div class="col-12 col-md-4">
+                        <div class="summary-card">
+                            <div class="summary-icon bg1"><i class="bi bi-people-fill"></i></div>
+                            <div class="summary-text">
+                                <span class="label">Total Mahasiswa</span>
+                                <span class="value" id="totalMahasiswa">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="summary-card">
+                            <div class="summary-icon bg2"><i class="bi bi-mortarboard-fill"></i></div>
+                            <div class="summary-text">
+                                <span class="label">Program Studi</span>
+                                <span class="value" id="totalJurusan">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="summary-card">
+                            <div class="summary-icon bg3"><i class="bi bi-check-circle-fill"></i></div>
+                            <div class="summary-text">
+                                <span class="label">Status Aktif</span>
+                                <span class="value" id="totalAktif">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAHASISWA -->
+            <section id="section-mahasiswa" class="row">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                        <h2 class="mb-0">Daftar Mahasiswa</h2>
+                        <button class="btn btn-primary btn-sm" id="btnAddTop">
+                            <i class="bi bi-plus-circle me-1"></i> Tambah
+                        </button>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0"><i class="bi bi-table me-2"></i>Data Mahasiswa</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-responsive-sm">
+                                <table class="table table-hover table-striped table-sm align-middle" id="studentTable">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th class="d-none d-sm-table-cell">Email</th>
+                                            <th>Jurusan</th>
+                                            <th class="d-none d-md-table-cell">Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody"></tbody>
+                                </table>
+                            </div>
+                            <div id="emptyMessage" class="text-center text-muted py-4">
+                                <i class="bi bi-inbox display-6 mb-2"></i>
+                                <h6>Belum ada data mahasiswa</h6>
+                                <p class="mb-0">Klik tombol <strong>Tambah</strong> untuk memasukkan data baru.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Tambah/Edit -->
+    <div class="modal fade" id="studentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-main">
+                    <h5 class="modal-title" id="modalTitle">Tambah Mahasiswa Baru</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="studentForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="editId">
+                        <div class="mb-3">
+                            <label class="form-label">NIM</label>
+                            <input type="text" class="form-control" id="nim" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jurusan</label>
+                            <select class="form-select" id="jurusan" required>
+                                <option value="">Pilih Jurusan</option>
+                                <option value="Teknologi Informasi">Teknologi Informasi</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Teknik Industri">Teknik Industri</option>
+                                <option value="Manajemen">Manajemen</option>
+                                <option value="Akuntansi">Akuntansi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan Mahasiswa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hapus -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Konfirmasi Hapus</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapus mahasiswa ini?</p>
+                    <p class="fw-bold text-danger" id="deleteName"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
